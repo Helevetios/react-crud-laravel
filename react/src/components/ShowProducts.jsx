@@ -49,7 +49,6 @@ const ShowProducts = () => {
                     </div>
                 ))
             }
-
         </div>
     )
 }
