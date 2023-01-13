@@ -18,7 +18,7 @@ const ShowProducts = () => {
             await axios.delete(`http://127.0.0.1:8000/api/product/${id}`)
             getAllProducts()
         }
-        
+
     }
 
 
@@ -36,14 +36,14 @@ const ShowProducts = () => {
                 products.map(product => (
                     <div className="col-md-4" key={product.id}>
                         <div className="card mb-3">
-                            <h5 className="card-header">Product</h5>
+                            <h5 className="card-header">{product.description}</h5>
                             <div className="card-body">
                                 <h5 className="card-title">Stock: {product.stock}</h5>
-                                <p className="card-text">{product.description}</p>
+                                <p className="card-text">Price: {product.price}</p>
                             </div>
                             <div className="card-footer">
-                                <Link to={`/edit/${product.id}`} className='btn btn-info'>Editar</Link>
-                                <button onClick={() => deleteProduct(product.id)} className='btn btn-danger float-end'>Eliminar</button>
+                                <button onClick={() => deleteProduct(product.id)} className='btn btn-danger'>Eliminar</button>
+                                <Link to={`/edit/${product.id}`} className='btn btn-dark float-end'>Editar</Link>
                             </div>
                         </div>
                     </div>
